@@ -4,6 +4,11 @@
              x:Class="MauiCustoViagem.MainPage"
              Title="Pedágio">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Ver Pedágios" Clicked="ToolbarItem_Clicked_Ver" />
+        <ToolbarItem Text="Calcular Custo" Clicked="ToolbarItem_Clicked_Custo" />
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <VerticalStackLayout>
             <Label Text="Origem:"/>
