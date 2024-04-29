@@ -5,8 +5,8 @@
              Title="Pedágio">
 
     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked_Salvar" />
         <ToolbarItem Text="Ver Pedágios" Clicked="ToolbarItem_Clicked_Ver" />
-        <ToolbarItem Text="Calcular Custo" Clicked="ToolbarItem_Clicked_Custo" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>

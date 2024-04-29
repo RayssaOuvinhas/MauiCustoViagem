@@ -20,7 +20,7 @@ namespace MauiCustoViagem.Helpers
         public Task<List<Pedagio>> Update(Pedagio p)
         {
             string sql = "UPDATE Pedagio SET Origem=? Destino=?, Distancia=?, Rendimento=?, Preco_Comb=? WHERE id=?";
-            return _conn.QueryAsync<Pedagio>(sql, p.Origem, p.Destino, p.Distancia, p.Rendimento, p.Preço_Comb, p.Id);
+            return _conn.QueryAsync<Pedagio>(sql, p.Origem, p.Destino, p.Distancia, p.Rendimento, p.Preco_Comb, p.Id);
         }
 
         public Task<List<Pedagio>> GetAll()
