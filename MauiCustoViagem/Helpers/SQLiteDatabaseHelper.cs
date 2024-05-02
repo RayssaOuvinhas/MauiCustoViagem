@@ -10,33 +10,33 @@ namespace MauiCustoViagem.Helpers
         public SQLiteDatabaseHelper(string path)
         {
             _conn = new SQLiteAsyncConnection(path);
-            _conn.CreateTableAsync<Pedagio>().Wait();
+            _conn.CreateTableAsync<Viagem>().Wait();
         }
 
-        public Task<int> Insert(Pedagio p)
+        public Task<int> Insert(Viagem p)
         {
             return _conn.InsertAsync(p);
         }
-        public Task<List<Pedagio>> Update(Pedagio p)
+        public Task<List<Viagem>> Update(Viagem p)
         {
-            string sql = "UPDATE Pedagio SET Origem=? Destino=?, Distancia=?, Rendimento=?, Preco_Comb=? WHERE id=?";
-            return _conn.QueryAsync<Pedagio>(sql, p.Origem, p.Destino, p.Distancia, p.Rendimento, p.Preco_Comb, p.Id);
+            string sql = "UPDATE Viagem SET Origem=? Destino=?, Distancia=?, Rendimento=?, Preco_Comb=? WHERE id=?";
+            return _conn.QueryAsync<Viagem>(sql, p.Origem, p.Destino, p.Distancia, p.Rendimento, p.Preco, p.Pedagio, p.Id);
         }
 
-        public Task<List<Pedagio>> GetAll()
+        public Task<List<Viagem>> GetAll()
         {
-            return _conn.Table<Pedagio>().ToListAsync();
+            return _conn.Table<Viagem>().ToListAsync();
         }
 
         public Task Delete(int id)
         {
-            return _conn.Table<Pedagio>().DeleteAsync(i => i.Id == id);
+            return _conn.Table<Viagem>().DeleteAsync(i => i.Id == id);
         }
 
-        public Task<List<Pedagio>> Search(string q)
+        public Task<List<Viagem>> Search(string q)
         {
-            string sql = "SELECT * FROM Pedagio WHERE Origem LIKE '%" + q + "%'";
-            return _conn.QueryAsync<Pedagio>(sql);
+            string sql = "SELECT * FROM Viagem WHERE Origem LIKE '%" + q + "%'";
+            return _conn.QueryAsync<Viagem>(sql);
         }
     }
 }

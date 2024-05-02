@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiCustoViagem.Views.VerPedagio"
-             Title="Pedagios">
+             x:Class="MauiCustoViagem.Views.VerViagem"
+             Title="Viagens">
 
     <ContentPage.Resources>
         <Style TargetType="Label">
@@ -11,20 +11,17 @@
         </Style>
     </ContentPage.Resources>
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Calcular Custo" Clicked="ToolbarItem_Clicked_Custo"  />
-    </ContentPage.ToolbarItems>
-
     <ContentPage.Content>
         <VerticalStackLayout>
-            <ListView x:Name="lst_pedagios" ItemSelected="lst_pedagios_ItemSelected" >
+            <ListView x:Name="lst_viagem" ItemSelected="lst_viagem_ItemSelected" >
                 <ListView.Header>
-                    <Grid ColumnDefinitions="2*, *, *, *, *">
+                    <Grid ColumnDefinitions="*, *, *, *, *, *">
                         <Label Grid.Column="0" Text="Origem"/>
                         <Label Grid.Column="1" Text="Destino"/>
                         <Label Grid.Column="2" Text="Distância"/>
                         <Label Grid.Column="3" Text="Rendimento"/>
-                        <Label Grid.Column="4" Text="Preço do Combustivel"/>
+                        <Label Grid.Column="4" Text="Preço do Combustível"/>
+                        <Label Grid.Column="5" Text="Preço do Pedágio"/>
                     </Grid>
                 </ListView.Header>
 
@@ -34,19 +31,19 @@
                             <ViewCell.ContextActions>
                                 <MenuItem Text="Remover" Clicked="MenuItem_Clicked_Remover"/>
                             </ViewCell.ContextActions>
-                            <Grid ColumnDefinitions="2*, *, *, *, *">
+                            <Grid ColumnDefinitions="*, *, *, *, * ,*">
                                 <Label Grid.Row="0" Grid.Column="0" Text="{Binding Origem}"/>
                                 <Label Grid.Row="0" Grid.Column="1" Text="{Binding Destino}"/>
                                 <Label Grid.Row="0" Grid.Column="2" Text="{Binding Distancia}"/>
                                 <Label Grid.Row="0" Grid.Column="3" Text="{Binding Rendimento}"/>
-                                <Label Grid.Row="0" Grid.Column="4" Text="{Binding Preco_comb}"/>
+                                <Label Grid.Row="0" Grid.Column="4" Text="{Binding Preco}"/>
+                                <Label Grid.Row="0" Grid.Column="5" Text="{Binding Pedagio}"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-
+                
             </ListView>
         </VerticalStackLayout>
     </ContentPage.Content>
-
 </ContentPage>

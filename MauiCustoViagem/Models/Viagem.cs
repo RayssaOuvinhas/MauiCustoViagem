@@ -2,7 +2,7 @@
 
 namespace MauiCustoViagem.Models
 {
-    public class Pedagio
+    public class Viagem
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
@@ -10,8 +10,8 @@ namespace MauiCustoViagem.Models
         public string Destino { get; set; }
         public double Distancia { get; set; }
         public double Rendimento { get; set; }
-        public double Preco_Comb { get; set; }
+        public double Preco { get; set; }
+        public double Pedagio { get; set; }
 
-        //public double Total { get => Quantidade * Preco; }
     }
 }
