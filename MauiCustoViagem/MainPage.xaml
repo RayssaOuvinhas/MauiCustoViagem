@@ -6,6 +6,7 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked_Salvar" />
+        <ToolbarItem Text="Adicional Pedágio" Clicked="ToolbarItem_Clicked_Add"/>
         <ToolbarItem Text="Ver Viagens" Clicked="ToolbarItem_Clicked_Ver" />
     </ContentPage.ToolbarItems>
 

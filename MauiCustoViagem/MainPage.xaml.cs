@@ -25,15 +25,9 @@ namespace MauiCustoViagem
                     Pedagio = Convert.ToDouble(txt_pedagio.Text),
                 };
 
-                double Litro = lista_viagens.Sum(i => (i.Preco / i.Rendimento));
-                double Custo = lista_viagens.Sum(i => (Litro * i.Distancia + i.Pedagio));
-                string msg = $"O custo total da viagem é {Custo:C}";
-                await DisplayAlert("Custo", msg, "Fechar");
                 await App.db.Insert(p);
                 await Navigation.PushAsync(new MainPage());
-                
-                
-
+                //await DisplayAlert("Viagem inserida","Fechar");
             }
             catch (Exception ex)
             {
@@ -44,6 +38,11 @@ namespace MauiCustoViagem
         private async void ToolbarItem_Clicked_Ver(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Views.VerViagem());
+        }
+
+        private async void ToolbarItem_Clicked_Add(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Views.NovoPedagio());
         }
     }
 }
